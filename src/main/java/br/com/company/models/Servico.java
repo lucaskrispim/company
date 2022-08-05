@@ -75,9 +75,9 @@ public class Servico {
 	}
 	
 	public String getValorTotal() {
-		return  new DecimalFormat("#.##").format(this.horasTotal*this.valorCobradoPorHora );
+		return  new DecimalFormat("#.##").format(this.horasTotal*this.valorCobradoPorHora);
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Servico [Descricao = " + this.getDescricao() + ", Valor Cobrado Por Hora=" + this.getValorCobradoPorHora() + ", Horas Previstas="

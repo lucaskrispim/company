@@ -2,7 +2,6 @@ package br.com.company.models;
 
 import java.time.LocalDate;
 
-import br.com.company.models.EnumTypesContainer.Gender;
 import br.com.company.models.EnumTypesContainer.Month;
 
 public class Contrato {

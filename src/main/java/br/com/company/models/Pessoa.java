@@ -35,6 +35,10 @@ abstract class Pessoa {
 	public String getSobreNome() {
 		return sobreNome;
 	}
+	
+	public String getNomeCompleto() {
+		return this.getNome()+" "+this.getSobreNome();
+	}
 
 	public String getEmail() {
 		return email;

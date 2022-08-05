@@ -20,7 +20,7 @@ public class EnumTypesContainer {
 	public enum Month {
 
 	    Janeiro(1),
-	    Fevereiro(1),
+	    Fevereiro(2),
 	    Marco(3),
 	    Abril(4),
 	    Maio(5),
@@ -49,6 +49,33 @@ public class EnumTypesContainer {
 	            }
 	        }
 	        throw new IllegalArgumentException("Mes nao encontrado!");
+	    }
+
+	}
+	
+	public enum Category {
+
+	    A(1),
+	    B(2),
+	    C(3);
+
+	    private int value;
+
+	    Category(int value) {
+	        this.value = value;
+	    }
+
+	    public int getValue() {
+	        return value;
+	    }
+	    
+	    public static Category fromValue(int value) {
+	        for (Category m : values()) {
+	            if (m.value == value) {
+	                return m;
+	            }
+	        }
+	        throw new IllegalArgumentException("Categoria não encontrado!");
 	    }
 
 	}

@@ -13,7 +13,7 @@ public class FuncionarioAssalariado extends Funcionario{
 				
 		super(nome, sobreNome, email, sexo);
 		
-		super.checkConditions(salario <= 0.0 && salario != null, "O valor do salario é inválido");
+		super.checkConditions(salario == null || salario <= 0.0, "O valor do salario é inválido!");
 		
 		this.salario = salario;
 		

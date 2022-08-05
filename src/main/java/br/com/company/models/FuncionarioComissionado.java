@@ -1,6 +1,5 @@
 package br.com.company.models;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import br.com.company.models.EnumTypesContainer.Gender;
