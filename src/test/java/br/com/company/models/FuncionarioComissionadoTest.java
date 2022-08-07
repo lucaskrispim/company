@@ -105,15 +105,15 @@ public class FuncionarioComissionadoTest {
 		
 		Contrato contrato2 = new Contrato(c2,s2,this.funcionario);
 		
-		Historico h = new Historico( );
+		Historico h = new HistoricoDeContratos( );
 		
 		h.add(contrato1);
 		
 		h.add(contrato2);
 		
-		System.out.println(this.funcionario.getSalario(Month.Agosto,2022,h.getContratos()));
+		System.out.println(this.funcionario.getSalario(Month.Agosto,2022,h.getAll()));
 		
-		assertEquals(this.funcionario.getSalario(contrato1.getMes(),2022,h.getContratos()),1.0);
+		assertEquals(this.funcionario.getSalario(contrato1.getMes(),2022,h.getAll()),1.0);
     
     }
         

@@ -73,7 +73,7 @@ public class RankingDeClientesTest {
 		
 		this.cc = new Contrato(this.cl1,this.ss,this.f);
 		
-		historico = new Historico();
+		historico = new HistoricoDeContratos();
 		
 		historico.add(this.c1);
 		

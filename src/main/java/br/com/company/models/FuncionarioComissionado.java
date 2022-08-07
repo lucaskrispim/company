@@ -41,7 +41,7 @@ public class FuncionarioComissionado extends Funcionario{
 	@Override
 	public Double getSalario(Month mes, Integer ano, ArrayList<Contrato> contratos) {
 		
-		return contratos.stream().filter(x-> x.getAno().equals(ano)).filter(x-> x.getMes() == mes).filter(x->x.getFuncionario().getCod_funcionario() == super.getCod_funcionario() ).mapToDouble(x->Double.valueOf(x.getTotal())).sum()*this.getComissao();
+		return contratos.stream().filter(x-> ((Contrato) x).getAno().equals(ano)).filter(x-> x.getMes() == mes).filter(x->x.getFuncionario().getCod_funcionario() == super.getCod_funcionario() ).mapToDouble(x->Double.valueOf(x.getTotal())).sum()*this.getComissao();
 
 	}
 }

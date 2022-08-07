@@ -50,6 +50,22 @@ public class ServicoTest {
     }
     
     @Test
+    public void servicoNaoDeveUltrapassarXHotasTotal()
+    {
+    	IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Servico("lavar roupa", 1.0, 1.0,2400.1));
+    
+    	assertEquals("Argumento ilegal para a variável horas total!", exception.getMessage());
+    }
+    
+//  @Test
+//  public void contratoDeveEnviarErroSeContratoComHorasExcedentes()
+//  {
+//  	IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> historico.add(cc));
+//  
+//  	assertEquals("O contrato não pode ser nulo ou não pode exceder 2400 horas de serviço!", exception.getMessage());
+//  }
+    
+    @Test
     public void verificarCodigoDoServico() {
        assertEquals(this.servico.getCod_servico(),"S1");
     }

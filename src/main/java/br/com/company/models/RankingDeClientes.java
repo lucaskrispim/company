@@ -11,16 +11,18 @@ public class RankingDeClientes {
 		
 		HashMap<String, ValorTotalECategoria> ranking = new HashMap<String, ValorTotalECategoria>();
 		
-		for (Contrato c: historico.getContratos()) {
-			if ( ranking.get(c.getCliente().getNomeCompleto())  == null) {
-					
-				ranking.put(c.getCliente().getNomeCompleto(), new ValorTotalECategoria(Double.valueOf(c.getServico().getValorTotal()), this.checkCategory(Double.valueOf(c.getServico().getValorTotal())) ));
+		for(int i = 0; i < historico.getAll().size() ; i++) {
+		
+			if ( ranking.get( ((Contrato) historico.getI(i)).getCliente().getNomeCompleto())  == null) {
+				
+				ranking.put(((Contrato) historico.getI(i)).getCliente().getNomeCompleto(), new ValorTotalECategoria(Double.valueOf( ((Contrato) historico.getI(i)).getServico().getValorTotal()), this.checkCategory(Double.valueOf(((Contrato) historico.getI(i)).getServico().getValorTotal())) ));
 			}else {
-				ValorTotalECategoria vtc = ranking.get(c.getCliente().getNomeCompleto());
-				ranking.put(c.getCliente().getNomeCompleto(), new ValorTotalECategoria( Double.valueOf(c.getServico().getValorTotal())+vtc.getValorTotal(), checkCategory(Double.valueOf(c.getServico().getValorTotal())+vtc.getValorTotal())) );
-			}
+				ValorTotalECategoria vtc = ranking.get(((Contrato) historico.getI(i)).getCliente().getNomeCompleto());
+				ranking.put(((Contrato) historico.getI(i)).getCliente().getNomeCompleto(), new ValorTotalECategoria( Double.valueOf(((Contrato) historico.getI(i)).getServico().getValorTotal())+vtc.getValorTotal(), checkCategory(Double.valueOf(((Contrato) historico.getI(i)).getServico().getValorTotal())+vtc.getValorTotal())) );
+			}		
 		}
 		
+			
 		return ranking;
 	}
 	

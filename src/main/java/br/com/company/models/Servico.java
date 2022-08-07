@@ -15,7 +15,7 @@ public class Servico {
 		this.checkConditions(descricao == null  || descricao.trim().isEmpty(),"Argumento ilegal para a variável descricao!");
 		this.checkConditions(valorCobradoPorHora == null || valorCobradoPorHora <= 0.0,"Argumento ilegal para a variável valor cobrado por hora de serviço!");		
 		this.checkConditions(horasPrevistas == null || horasPrevistas <= 0.0,"Argumento ilegal para a variável horas previstas!");
-		this.checkConditions(hotasTotal == null || hotasTotal<0.0,"Argumento ilegal para a variável horas total!");
+		this.checkConditions(hotasTotal == null || hotasTotal<0.0 || hotasTotal>2400.0,"Argumento ilegal para a variável horas total!");
 		
 		this.descricao = descricao;
 		this.valorCobradoPorHora = valorCobradoPorHora;

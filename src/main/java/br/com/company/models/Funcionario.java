@@ -44,6 +44,6 @@ abstract class Funcionario extends Pessoa{
 	
 	public abstract Funcionario getFuncionario();
 	
-	public abstract Double getSalario(Month mes, Integer ano, ArrayList<Contrato> contratos);
+	public abstract Double getSalario(Month mes, Integer ano, ArrayList<Contrato> arrayList);
 
 }

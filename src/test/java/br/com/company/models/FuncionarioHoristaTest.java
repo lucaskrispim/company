@@ -104,13 +104,13 @@ public class FuncionarioHoristaTest {
 		
 		Contrato contrato2 = new Contrato(c2,s2,this.funcionario);
 		
-		Historico h = new Historico( );
+		Historico h = new HistoricoDeContratos( );
 		
 		h.add(contrato1);
 		
 		h.add(contrato2);
 			
-		assertEquals(this.funcionario.getSalario(contrato1.getMes(),2022,h.getContratos()),2.0);
+		assertEquals(this.funcionario.getSalario(contrato1.getMes(),2022,h.getAll()),2.0);
     
     }
         
