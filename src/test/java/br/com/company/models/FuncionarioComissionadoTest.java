@@ -3,15 +3,13 @@ package br.com.company.models;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.BeforeAll;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 import br.com.company.models.EnumTypesContainer.Gender;
 import br.com.company.models.EnumTypesContainer.Month;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FuncionarioComissionadoTest {
 	private Funcionario funcionario;
 	private Funcionario funcionarioFeminino;
@@ -61,11 +59,13 @@ public class FuncionarioComissionadoTest {
     }
     	
     @Test
+    @Order(1)
     public void verificarCodigoDoFuncionarioAssalariado() {
        assertEquals(this.funcionario.getCod_funcionario(),"F1");
     }
     
     @Test
+    @Order(2)
     public void verificarCodigoDoFuncionarioAssalariado2() {
        assertEquals(this.funcionarioFeminino.getCod_funcionario(),"F2");
     }
@@ -126,5 +126,4 @@ public class FuncionarioComissionadoTest {
     public void verificarTratamentoDoClienteFeminino() {
        assertEquals(this.funcionarioFeminino.getTratamento(),"Prezada Senhora Ana da silva");
     }
-	
 }

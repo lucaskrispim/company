@@ -41,8 +41,6 @@ abstract class Historico<T>{
 
 	public ArrayList<T> getAll() {
 
-		ArrayList<T> temp = new ArrayList<T>(lista);
-		//System.out.println(temp.stream().findFirst() );
 		return new ArrayList<T>(lista);
 
 	}
