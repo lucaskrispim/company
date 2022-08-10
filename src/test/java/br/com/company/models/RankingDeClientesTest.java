@@ -44,7 +44,7 @@ public class RankingDeClientesTest {
 	
 	Cliente cl3;
 	
-	Historico historico;
+	HistoricoDeContratos historico;
 		
 	@BeforeAll
 	public void setUp() {

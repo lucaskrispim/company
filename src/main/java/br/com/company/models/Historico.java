@@ -3,14 +3,9 @@ package br.com.company.models;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class Historico<T>{
+public class Historico<T>{
 
-	private List<T> lista;
-
-	public Historico() {
-
-		this.lista = new ArrayList<T>();
-	}
+	private List<T> lista = new ArrayList<T>();
 	
 	public void add(T obj) {
 		this.checkConditions(obj == null  ,"O objeto não pode ser nulo!");
@@ -40,9 +35,7 @@ abstract class Historico<T>{
 	}
 
 	public ArrayList<T> getAll() {
-
 		return new ArrayList<T>(lista);
-
 	}
 		
 	private void checkConditions(Boolean cond,String msg) {

@@ -105,7 +105,7 @@ public class FuncionarioComissionadoTest {
 		
 		Contrato contrato2 = new Contrato(c2,s2,this.funcionario);
 		
-		Historico h = new HistoricoDeContratos( );
+		HistoricoDeContratos h = new HistoricoDeContratos( );
 		
 		h.add(contrato1);
 		

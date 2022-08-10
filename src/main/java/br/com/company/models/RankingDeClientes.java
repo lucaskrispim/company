@@ -5,7 +5,7 @@ import br.com.company.models.EnumTypesContainer.Category;
 
 public class RankingDeClientes {
 	
-	public HashMap<String, ValorTotalECategoria> getClientesEValorTotalDeServicos(Historico historico) {
+	public HashMap<String, ValorTotalECategoria> getClientesEValorTotalDeServicos(HistoricoDeContratos historico) {
 		
 		checkConditions(historico == null, "O hisotrico não pode ser nulo");
 		
@@ -26,7 +26,7 @@ public class RankingDeClientes {
 		return ranking;
 	}
 	
-	public Double getTotalPorCliente(String nome, String sobreNome,Historico historico) {
+	public Double getTotalPorCliente(String nome, String sobreNome,HistoricoDeContratos historico) {
 		
 		checkConditions(historico == null, "O hisotrico não pode ser nulo");
 		checkConditions(nome == null || nome.trim().isEmpty(), "Argumento inválido para o nome do cliente");
@@ -38,7 +38,7 @@ public class RankingDeClientes {
 		
 	}
 	
-	public Category getCategoriaPorCliente(String nome, String sobreNome,Historico historico) {
+	public Category getCategoriaPorCliente(String nome, String sobreNome,HistoricoDeContratos historico) {
 		
 		checkConditions(historico == null, "O hisotrico não pode ser nulo");
 		checkConditions(nome == null || nome.trim().isEmpty(), "Argumento inválido para o nome do cliente");

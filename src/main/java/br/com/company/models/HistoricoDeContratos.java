@@ -1,13 +1,38 @@
 package br.com.company.models;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HistoricoDeContratos extends Historico {
+public class HistoricoDeContratos {
 	
-	private Historico<Contrato> contratos;
+	private Historico<Contrato> contratos = new Historico();
 
+	public void add(Contrato contrato) {
+		this.contratos.add(contrato);
+	}
+	
+	public void remove(Contrato contrato) {
+		this.contratos.remove(contrato);
+	}
+	
+	public boolean verifyIfHasObj(Contrato contrato) {
+		return this.contratos.verifyIfHasObj(contrato);
+	}
+
+	public Contrato getContratoCopy(Contrato contrato) {
+		return this.contratos.getObjCopy(contrato);
+	}
+	
+	public Contrato getI(int i) {
+		return this.contratos.getI(i);
+	}
+
+	public ArrayList<Contrato> getAll() {
+		return this.contratos.getAll();
+	}
+	
 	public Double getTotalPrevisto() {
 
 		return this.contratos.getAll().stream().mapToDouble(x -> Double.valueOf(x.getTotalPrevisto().replace(",", "."))).sum();
@@ -22,19 +47,19 @@ public class HistoricoDeContratos extends Historico {
 
 	public List<Contrato> getListaEmOrdemAlfabeticaDeCliente() {
 
-		return (List<Contrato>) super.getAll().stream().sorted(ClientNameComparator).collect(Collectors.toList());
+		return (List<Contrato>) contratos.getAll().stream().sorted(ClientNameComparator).collect(Collectors.toList());
 
 	}
 	
 	public List<Contrato> getListaEmOrdemAlfabeticaReversaDeCliente() {
 
-		return (List<Contrato>) super.getAll().stream().sorted(ClientNameComparatorReverse).collect(Collectors.toList());
+		return (List<Contrato>) contratos.getAll().stream().sorted(ClientNameComparatorReverse).collect(Collectors.toList());
 
 	}
 	
 	public List<Contrato> getListaEmOrdemCrescenteDeValorDeServico() {
 
-		return (List<Contrato>) super.getAll().stream().sorted(ServiceValueComparator).collect(Collectors.toList());
+		return (List<Contrato>) contratos.getAll().stream().sorted(ServiceValueComparator).collect(Collectors.toList());
 
 	}
 	
